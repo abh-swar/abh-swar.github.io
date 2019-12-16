@@ -1,0 +1,132 @@
+*{
+	font-size: 16px;
+	font-family: Poppins;
+}
+.textright{
+	text-align:right;
+}
+.textcenter{
+	text-align:center;
+}
+.textleft{
+		text-align:left;
+	}
+.right{
+float:right;
+}
+.left{
+float:left;
+}
+.boldtext{
+	font-weight: 700;
+}
+.hide{
+	display:none;
+}
+.noborder-left{
+	border-left: 0px !important;
+}
+.noborder-right{
+	border-right: 0px !important;
+}
+.noborder-top{
+	border-top: 0px !important;
+}
+.noborder-bottom{
+	border-bottom: 0px !important;
+}
+.noborder{
+	border: 0px !important;
+}
+.nopaddinglr{
+	padding-right: 0;
+    padding-left: 0;
+}
+.nomargin-lr{
+		margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+/*****************************FORM STYLE************************************/
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea, .prefix, .postfix,select {
+	font-size: 1rem;
+	height: 2.5rem;
+	border-radius: 3px;
+}
+select{
+margin-bottom: 1rem !important;
+}
+label {
+    font-weight: 700;
+}
+.disabled-input{
+	background-color: #eee !important;
+	cursor: not-allowed;
+}
+.uneditable {
+  width: 200px;
+  overflow: hidden;
+  border: 1px solid #000;
+  position: relative;
+  padding: 10px 0;
+}
+.uneditable:after{
+  width: 0; 
+  height: 0; 
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #f00;
+  position: absolute;
+  top: 40%;
+  right: 5px;
+  content: "";
+  z-index: 98;
+ }
+.uneditable select{
+  width: 220px;
+  border: 0;
+  position: relative;
+  z-index: 99;
+  background: none;
+}
+.uneditable{
+background-color: #f7f7f7 !important;
+    border: 0;
+	}
+	.faux-input{
+		font-size: 1rem;
+    height: 2.5rem;
+    border-radius: 0 3px 3px 0;
+    padding: 0.8rem 1rem 0.2rem 1rem;
+    background-color: #e6e6e6;
+    border-left: 1px solid #cacaca;
+	}
+/*****************************END FORM STYLE************************************/
+/*****************************BUTTON STYLE************************************/
+button.radius, .button.radius {
+    border-radius: 3px;
+    padding: 10px 30px 10px 30px;
+    width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    max-width: 100%;
+    text-align: center;
+}
+/*****************************END BUTTON STYLE************************************/
+/*****************************ROW STYLE************************************/
+.rowpadding{
+	padding-top:20px;
+	padding-bottom:10px;
+}
+.rowmargin{
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+.rowbackground{
+	background: #f7f7f7;
+}
+/*****************************END ROW STYLE************************************/
+.navbar .nav>li>a{
+	font-size: 13px;
+}

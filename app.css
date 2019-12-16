@@ -1,0 +1,24 @@
+.radio2 input[type="radio"]{
+cursor: pointer;
+-webkit-appearance: none;
+appearance: none;
+background: #cfcfcf;
+border-radius: 2px;
+box-sizing: border-box;
+position: relative;
+box-sizing: content-box ;
+width: 30px;
+height: 30px;
+border-width: 0px;
+transition: all .3s linear;
+}
+.mandatory {
+  color:#800000;
+}
+.radio2 input[type="radio"]:checked{
+  background-color: #2ECC71;
+}
+.radio2 input[type="radio"]:focus{
+  outline: 0 none;
+  box-shadow: none;
+}
