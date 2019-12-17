@@ -1843,7 +1843,11 @@ background-color: rgba(0,0,0,.85);
 }
 /*END Lightbox*/
 
-
+@media print, screen and (min-width: 64em){
+	.large-3 {
+    width: 100%;
+}
+}
 /*Mycss situap119 for agentiframe from here*/
 .row.all-details-here{
     border-radius: 8px;
@@ -1888,7 +1892,28 @@ ul.vertical.medium-horizontal.menu.expanded.text-center {
     align-items: center;
 }
 
+.orbit-slide{
+	width: 100%;
+	display: inline-flex;
+}
 
+li.top-slide {
+    width: 100%;
+}
+.orbit-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    object-fit: cover;
+    height: 260px;
+}
+
+.orbit-caption, .orbit-next, .orbit-previous{
+	text-align: center;
+}
+.orbit-caption{
+	background-color: hsla(0, 0%, 4%, 0.12);
+}
 
 /*Mycss situap119 for KanatakaR from here*/
 button.new-btn, .button.new-btn {
@@ -1904,12 +1929,10 @@ button.new-btn, .button.new-btn {
 
 .orbit-previous{
 	background-color: #333;
-	border-radius: 50%;
 }
 
 .orbit-next{
 	background-color: #333;
-	border-radius: 50%;
 }
 
 div#morepic{
@@ -1917,13 +1940,23 @@ div#morepic{
 }
 
 .orbit-wrapper{
-	width: 76%;
+	width: 100%;
     margin: auto;
 }
 
 .reveal img.orbit-image{
-	min-height: 424px;
+	min-height: 424px !important;
+	min-width: 1000px;
 	margin: auto;
 	object-fit: cover;
 	width: 100%;
 }
+
+.border-to-top{
+	margin-bottom: 25px !important;
+    border: 1px solid #cacaca;
+    border-radius: 13px;
+    margin-left: 14px !important;
+    margin-right: 29px !important;
+    background: #ffffff;
+ }

@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="//agentiframe.com/details/vendor/foundationv6.min.css" />
+<link rel="stylesheet" href="//agentiframe.com/details/vendor/global.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins|Roboto+Condensed">
+<link rel="stylesheet" href="//agentiframe.com/details/vendor/app.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+
+<style>
+form .stars {
+	float: left;
+  background: url("https://www.agentiframe.com/details/images/stars.jpeg") repeat-x 0 0;
+  background-size: 20%;
+  width: 150px;
+  margin: 0 auto;
+}
+
+form .stars input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+form .stars input[type="radio"].star-5:checked ~ span { width: 100%; }
+
+form .stars input[type="radio"].star-4:checked ~ span { width: 80%; }
+
+form .stars input[type="radio"].star-3:checked ~ span { width: 60%; }
+
+form .stars input[type="radio"].star-2:checked ~ span { width: 40%; }
+
+form .stars input[type="radio"].star-1:checked ~ span { width: 20%; }
+
+form .stars label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0!important;
+  padding: 0!important;
+  text-indent: -999em;
+  float: left;
+  position: relative;
+  z-index: 10;
+  background: transparent!important;
+  cursor: pointer;
+}
+
+form .stars label:hover ~ span { background-position: 0 -30px; }
+
+form .stars label.star-5:hover ~ span { width: 100% !important; }
+
+form .stars label.star-4:hover ~ span { width: 80% !important; }
+
+form .stars label.star-3:hover ~ span { width: 60% !important; }
+
+form .stars label.star-2:hover ~ span { width: 40% !important; }
+
+form .stars label.star-1:hover ~ span { width: 20% !important; }
+
+form .stars span {
+  display: block;
+  width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  background-size: 12px;
+  background: url("https://www.agentiframe.com/details/images/stars.jpeg") repeat-x 0 -60px;
+  -webkit-transition: -webkit-width 0.5s;
+  -moz-transition: -moz-width 0.5s;
+  -ms-transition: -ms-width 0.5s;
+  -o-transition: -o-width 0.5s;
+  transition: width 0.5s;
+}
+
+.label__checkbox {
+  display: none;
+}
+
+.label__check {
+  display: inline-block;
+  border-radius: 50%;
+  border: 5px solid rgba(0,0,0,0.1);
+  background: white;
+  vertical-align: middle;
+  margin-right: 20px;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border .3s ease;
+  
+  i.icon {
+    opacity: 0.2;
+    font-size: ~'calc(1rem + 1vw)';
+    color: transparent;
+    transition: opacity .3s .1s ease;
+    -webkit-text-stroke: 3px rgba(0,0,0,.5);
+`  }
+  
+  &:hover {
+    border: 5px solid rgba(0,0,0,0.2);
+  }
+}
+
+.label__checkbox:checked + .label__text .label__check {
+  animation: check .5s cubic-bezier(0.895, 0.030, 0.685, 0.220) forwards;
+  
+  .icon {
+    opacity: 1;
+    transform: scale(0);
+    color: white;
+    -webkit-text-stroke: 0;
+    animation: icon .3s cubic-bezier(1.000, 0.008, 0.565, 1.650) .1s 1 forwards;
+  }
+}
+@keyframes icon {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+@keyframes check {
+  0% {
+    width: 1.5em;
+    height: 1.5em;
+    border-width: 5px;
+  }
+  10% {
+    width: 1.5em;
+    height: 1.5em;
+    opacity: 0.1;
+    background: rgba(0,0,0,0.2);
+    border-width: 15px;
+  }
+  12% {
+    width: 1.5em;
+    height: 1.5em;
+    opacity: 0.4;
+    background: rgba(0,0,0,0.1);
+    border-width: 0;
+  }
+  50% {
+    width: 2em;
+    height: 2em;
+    background: #00d478;
+    border: 0;
+    opacity: 0.6;
+  }
+  100% {
+    width: 2em;
+    height: 2em;
+    background: #00d478;
+    border: 0;
+    opacity: 1;
+  }
+}
+.label {
+	background: #f7f7f7!important;
+	width: 45px;
+}
+.bui-review-score__badge {
+    background: #003580;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 16px;
+type
+    font-weight: 600;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    vertical-align: baseline;
+    border-radius: 6px 6px 6px 6px;
+    height: 32px;
+    width: 40px;
+}
+.sub-text {
+	color:#acacac;
+	margin-bottom:-2px;
+	font-size:0.8em;
+  font-weight: 400;
+}
+.websitebtn {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  cursor: default;
+  font-family: arial,sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  height: 27px;
+  line-height: 27px;
+  margin: 2px 0;
+  min-width: 54px;
+  padding: 0 8px;
+  text-align: center;
+  -webkit-transition: all 0.218s,visibility 0s;
+  transition: all 0.218s,visibility 0s;
+  -webkit-user-select: none;
+}
+</style>
+</head>
+<body>
+<div class="row rowpadding rowmargin rowbackground">
+<!-- new added -->
+<div class="row border-to-top">
+<div class="small-12 medium-3 large-3 columns">
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+<div class="orbit-wrapper">
+<ul class="orbit-container">
+	<div class="is-active orbit-slide">
+		<li class="top-slide">
+		<figure class="orbit-figure">
+		  <img class="orbit-image" src="images/one.jpeg" alt="Space">
+		<figcaption class="orbit-caption" data-open="morepic"><i class="fa fa-search"></i> Enlarge
+		</figcaption>
+		</figure>	          
+		</li>
+		<li class="top-slide">
+		<figure class="orbit-figure">
+		  <img class="orbit-image" src="images/stars.jpeg" alt="Space">
+		</figure>	          
+		</li>
+		<li class="top-slide">
+		<figure class="orbit-figure">
+		  <img class="orbit-image" src="images/abc.jpeg" alt="Space">
+		</figure>	          
+		</li>
+		<li class="top-slide">
+		<figure class="orbit-figure">
+		  <img class="orbit-image" src="images/mbc.jpg" alt="Space">
+		</figure>	          
+		</li>
+		<li class="top-slide">
+		<figure class="orbit-figure">
+		  <img class="orbit-image" src="images/aa.jpg" alt="Space">
+	   </figure>	          
+		</li>
+
+<figcaption class="orbit-caption" data-open="morepic"><i class="fa fa-search"></i> Enlarge
+		</figcaption>
+	</div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- here. -->
+	<div class="small-12 medium-8 large-8 columns">
+		<div class="intro-arti"><!-- my code AS -->
+		<div class="row">
+
+			<div class="small-12 medium-9 large-9 columns">
+				<div class="row">
+					<div class="small-12 medium-12 large-12 columns">
+						<h4>7937 Highway 7 . Guelph/Eramosa, Ontario N1H6J3</h4>
+					</div>
+					<div class="small-12 medium-12 large-12 columns">
+						MLS&#174; Number: 30707595					</div>
+					<!-- <div class="small-12 medium-12 large-12 columns">			
+																																				;
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<div class="row listd-b">
+			<div class="small-12 medium-12 large-12 columns">
+				<div class="row columns all-details-here" style="background:#eee;border:1px solid #ececec;padding: 20px;">
+						<label>Listed by:</label>
+								<div class="small-12 medium-12 large-12 columns">
+		<i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>Scott Robinson with Royal Lepage Royal City Realty Brokerage 
+																								
+					</span>
+							</div>
+													<div class="small-12 medium-12 large-12 columns">
+								<i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>Maggie Horne with Royal Lepage Royal City Realty Brokerage																	<!-- &nbsp;&nbsp; --><!-- <a tel="(519) 824-9050"><i class="fa fa-phone"></i>&nbsp;519-824-9050</a> -->
+																							
+																</span>
+							</div>
+													<div class="small-12 medium-12 large-12 columns">
+<i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>Michael Christie with Royal Lepage Royal City Realty Brokerage											
+																									>
+</span>
+							</div>
+													
+<div class="small-12 medium-12 large-12 columns">
+								<i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>Jeanette L. Schmidt with Re/max Twin City Realty Inc.																	<!-- &nbsp;&nbsp; --><!-- <a tel="(519) 885-0200"><i class="fa fa-phone"></i>&nbsp;519-885-0200</a> -->
+																								
+																</span>
+							</div>
+							
+					<div class="small-12 medium-3 large-3 columns">
+										</div>
+					<div class="small-12 medium-3 large-3 columns">
+											</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+
+
+<div class="all-agentiframe-here">
+		<div class="row columns">
+		<ul class="vertical medium-horizontal menu expanded text-center">
+					<li><a href="#"><div class="stat">$1,750,000</div><span>PRICE</span></a></li>
+					<li><a href="#"><div class="stat">6</div><span>BEDROOM</span></a></li>
+					<li><a href="#"><div class="stat">2</div><span>BATHROOM</span></a></li>
+				</ul>
+		</div>
+		<hr>
+				<div class="row all-details-here">
+			<div class="small-12 medium-12 large-12 columns">
+				<p>Talk about endless options with this amazing property!  Currently operating with 22 workable acres,  two and half broiler barns and 1/2 a barn with 11,904 layers, you could choose to buy the existing quota and carry on with this very profitable operation (quota is in addition to the Purchase Price of the real estate). Or, re purpose the barns for whatever new use you have in mind (as long as it conforms to the agricultural uses allowed).  With two completely separate homes (1847 & 1441 sq ft respectively) on the property either your extended family can live with you, or rent them out to farm help, or simply generate extra income.  The possibilities are practically limitless with this fine offering - let your mind wander, and make your entrepreneurial dreams a reality. (id:33931)</p>
+								<p>
+					You can reach Scott Robinson by phone 519-824-9050 for more information.
+				</p>
+			</div>
+		</div>
+		<hr>
+					<div class="row all-details-here">
+			<h4> Property Details</h4>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Board					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						44					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Features					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Double width or more driveway, Crushed stone driveway, Country residential					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Ownership Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Freehold					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Property Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Agriculture					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Structure					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Outbuilding					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Equipment Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						None					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Farm Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Animal, Farm					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Live Stock Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Poultry					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Parking Space Total					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						30					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Rental Equipment Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						None					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Zoning Description					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						AGR					</div>
+			</div>			
+
+<!-- building content here. -->
+
+			<div class="row all-details-here">
+			<h4> Building</h4>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Bathroom					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						2					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Bedroom					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						6					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Fireplace Present					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						False					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Size Interior					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						1847 sqft					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Bedrooms Above Ground					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						6					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Architectural Style					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Bungalow					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Basement Development					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Unfinished					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Basement Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						None (Unfinished)					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Construction Material					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Wood frame					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Cooling Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						None					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Exterior Finish					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Wood					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Heating Fuel					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Natural gas					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Heating Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Forced air					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Stories Total					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						1					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Utility Water					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Drilled Well, Well					</div>
+			</div>			
+
+
+<!-- Land Details here. -->
+			<div class="row all-details-here">
+			<h4> Land</h4>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Size Total					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						30.32 ac|25 - 50 acres					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Size Frontage					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						788 ft					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Size Depth					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						1332 ft					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Acreage					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						true					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Size Irregular					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						30.32					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Size Total Text					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						30.32 ac|25 - 50 acres					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Sewer					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Septic System					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Soil Type					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Clay, Loam					</div>
+			</div>			
+
+<!-- Address content here. -->
+			<div class="row all-details-here">
+			
+			<h4> Address</h4>
+		<div class="small-6 medium-6 large-6 columns bottom-line">
+						Subdivision	</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						43 - Rockwood </div>
+						</div>
+<!-- Parking Content Here. -->
+			<div class="row all-details-here">
+			<h4> Parking</h4>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						Parking Name					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Detached garage					</div>
+								<div class="small-6 medium-6 large-6 columns bottom-line">
+						parking Details					</div>
+					<div class="small-6 medium-6 large-6 columns bottom-line">
+						Detached garage, Gravel					</div>
+			</div>
+		
+				<!--div class="row columns" style="margin-bottom:6px"-->
+		<div class="row columns all-details-here" style="background:#f7f7f7;padding:35px;margin-bottom:10px;border-radius: 0px;">
+			<h4>Rooms</h4>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Other</div>
+			<div class="small-4 medium-4 large-4 columns">11' 6'' x 7' 7''</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Foyer</div>
+			<div class="small-4 medium-4 large-4 columns">9' 7'' x 8' 4''</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">4pc Bathroom</div>
+			<div class="small-4 medium-4 large-4 columns">&nbsp;</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Dining room</div>
+			<div class="small-4 medium-4 large-4 columns">14' 1'' x 12' 5''</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Family room</div>
+			<div class="small-4 medium-4 large-4 columns">25' 7'' x 10' 7''</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Bedroom</div>
+			<div class="small-4 medium-4 large-4 columns">12' 5'' x 7' 11''</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Bedroom</div>
+			<div class="small-4 medium-4 large-4 columns">12' 5'' x 9' 5''</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Master bedroom</div>
+			<div class="small-4 medium-4 large-4 columns">17' 8'' x 11' 10''</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Kitchen</div>
+			<div class="small-4 medium-4 large-4 columns">8' 6'' x 12' 3''</div>
+						<div class="small-4 medium-4 large-4 columns">Second level</div>
+			<div class="small-4 medium-4 large-4 columns">Living room</div>
+			<div class="small-4 medium-4 large-4 columns">17' 1'' x 12' 2''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">3pc Bathroom</div>
+			<div class="small-4 medium-4 large-4 columns">&nbsp;</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Bedroom</div>
+			<div class="small-4 medium-4 large-4 columns">7' 11'' x 11' 3''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Bedroom</div>
+			<div class="small-4 medium-4 large-4 columns">10' 2'' x 10' 1''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Foyer</div>
+			<div class="small-4 medium-4 large-4 columns">13' 6'' x 11' 10''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Master bedroom</div>
+			<div class="small-4 medium-4 large-4 columns">10' 6'' x 11' 6''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Dining room</div>
+			<div class="small-4 medium-4 large-4 columns">11' 5'' x 11' 3''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Kitchen</div>
+			<div class="small-4 medium-4 large-4 columns">12' 5'' x 7' 11''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Laundry room</div>
+			<div class="small-4 medium-4 large-4 columns">7' 3'' x 8' 1''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Family room</div>
+			<div class="small-4 medium-4 large-4 columns">17' 10'' x 11' 0''</div>
+						<div class="small-4 medium-4 large-4 columns">Ground level</div>
+			<div class="small-4 medium-4 large-4 columns">Living room</div>
+			<div class="small-4 medium-4 large-4 columns">15' 6'' x 15' 3''</div>
+					</div>
+
+				</div><!-- all-agentiframe-here class. -->
+				<!--hr-->
+		<a name=map></a>
+		<div class="row">
+			<div class="small-12 medium-12 large-12 columns">
+				<div id="listingmap" style="width:100%;height:200px;"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 medium-12 large-12 columns">
+				<div id="streetview" style="width:100%;height:200px;"></div>		
+			</div>
+		</div>
+	</div>
+
+	<div class="small-12 medium-4 large-4 columns">
+		<div class="row" style="background-color:#f7f7f7;">
+			<div class="small-12 medium-12 large-12 columns">
+
+		<div class="row contact-secnd">
+			<div class="small-12 medium-12 large-12 columns">
+				<form action=https://www.agentiframe.com/details-email/ method=post>
+				<h5>Contact</h5>
+				<div class="row">
+					<div class="small-12 medium-12 large-12 columns">
+						<label>Name <span class=mandatory>*</span></label>
+						<input type=text id=fullname name=fullname required>
+					</div>
+					<div class="small-12 medium-12 large-12 columns">
+						<label>Email <span class=mandatory>*</span></label>
+						<input type=email id=email name=email required>
+					</div>
+					<div class="small-12 medium-12 large-12 columns">
+						<label>Phone</label>
+						<input type=text id=phone name=phone>
+					</div>
+					<div class="small-12 medium-12 large-12 columns">
+						<label>Message/Comment <span class=mandatory>*</span></label>
+						<textarea id=message name=message required></textarea>
+					</div>
+					<div class="small-12 medium-12 large-12 columns">
+						<input type=submit class="button medium radius new-btn" value="Send">
+						&nbsp;&nbsp<input type=checkbox required checked> Disclaimer<br><br>
+					</div>
+				</div>
+				<input type=hidden name=companyid value="">
+			</form>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<div class="reveal" id="morepic" data-reveal>
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-use-m-u-i="false">
+  <div class="orbit-wrapper">
+    <div class="orbit-controls">
+      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+    </div>
+    <ul class="orbit-container"  style="min-height: 390px;">
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/stars.jpeg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/aa.jpg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/mbc.jpg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/abc.jpeg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/aa.jpg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/one.jpeg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/one.jpeg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/one.jpeg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/one.jpeg" alt="Space">
+        </figure>
+      </li>
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="images/one.jpeg" alt="Space">
+        </figure>
+      </li>
+    </ul>
+  	</div>
+		</div>
+
+
+
+	</div>
+		<style>
+	 	.servicehighlight 
+	 	{
+		 	background: #1779ba;
+	    color: #fff;
+	    border-radius: 3px;
+	    padding: 3px 3px 3px 3px;
+	    float: left;
+	    text-align: center;
+	    font-size: 13px;
+	    margin: 10px 10px 0 0;
+	    text-transform: uppercase;
+  	}
+		</style>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtnd8blBK1xlrHwxcibMSZsDhgN4FYMV4&callback=initialize" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$(function() {
+	$(':radio:not(:checked)').attr('disabled', true);
+	$('#lastyear').hide();
+	$('#current').click(function()
+	{
+		$('#lastyear').hide();
+	});
+	$('#former').click(function()
+	{
+		$('#lastyear').show();
+	});
+	$(".label__checkbox").change(function()
+	{
+	  $(".label__checkbox").prop('checked',false);
+	  $(this).prop('checked',true);
+	});
+});
+</script>
+<script type="text/javascript"> 
+		google.maps.event.addDomListener(window, 'load', initialize);
+		function initialize() {			
+			var lati,long;
+		  var myLatlng = new google.maps.LatLng('43.578043200000', '-80.188126200000');
+		  var myOptions = {
+			 zoom: 12,
+			 center: myLatlng,
+			 mapTypeId: google.maps.MapTypeId.ROADMAP,
+			 mapTypeControl: false
+		  };
+		 
+		  var map = new google.maps.Map(
+				document.getElementById("listingmap"),
+				myOptions);
+				
+		  var styledMapOptions = {
+				map: map,
+				name: "Literal"
+		  }
+		  
+		  var MapType = new google.maps.StyledMapType('textual', styledMapOptions);
+
+		  map.mapTypes.set('literal', MapType);
+		  map.setMapTypeId('literal');
+         
+      var latLng2 = new google.maps.LatLng('43.578043200000', '-80.188126200000');
+      var panoramaOptions = {
+      	position: latLng2,
+        addressControl : false,
+        pov: {
+          heading:0,
+          pitch:0,
+          zoom:0            
+        }
+      };
+      var myPano = new google.maps.StreetViewPanorama(document.getElementById("streetview"), panoramaOptions);
+      map.setStreetView(myPano);
+		 
+		  var nyLayer = new google.maps.KmlLayer(
+		  	'',
+				//'http://bluliving.com/kml?v=380402&nolistings=1',
+				{map: map, preserveViewport:true});
+				
+		  var marker = new google.maps.Marker({
+			  position: myLatlng, 
+			  map: map,
+			  title:""
+		  });  
+		  google.maps.event.addListener(nyLayer, 'click', function(kmlEvent) {});
+		}
+</script>
+<script src="//trucko.com/company/vendor/foundation.js"></script>
+<script type="text/javascript">
+$(document).foundation();
+</script></body>
+</html>
