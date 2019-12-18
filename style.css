@@ -1848,6 +1848,32 @@ background-color: rgba(0,0,0,.85);
     width: 100%;
 }
 }
+
+@media (min-width: 320px) and (max-width: 425px){
+	 li.top-slide {
+    display: none;
+ }
+
+li.top-slide:first-child {
+    display: block;
+ }
+}
+
+@media (min-width: 768px) and (max-width: 768px){
+li.top-slide {
+    display: inline-flex;
+    object-fit: contain;
+ }
+ ul.orbit-container{
+ 	width: 630px;
+ }
+}
+
+/*@media (min-width: 1024px){
+ul.orbit-container{
+ 	width: 880px;
+ }
+}*/
 /*Mycss situap119 for agentiframe from here*/
 .row.all-details-here{
     border-radius: 8px;
@@ -1960,3 +1986,4 @@ div#morepic{
     margin-right: 29px !important;
     background: #ffffff;
  }
+
